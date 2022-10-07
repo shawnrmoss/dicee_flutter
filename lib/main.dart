@@ -38,7 +38,7 @@ class DicePage extends StatefulWidget {
 
 class _DicePageState extends State<DicePage> {
   final min = 1;
-  final max = 7;
+  final max = 6;
   final random = Random();
   int leftDiceNumber = 1;
   int rightDiceNumber = 2;
@@ -52,7 +52,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  leftDiceNumber = min + random.nextInt(max - min);
+                  leftDiceNumber = min + random.nextInt(max);
                 });
               },
               child: Image.asset('images/dice$leftDiceNumber.png'),
@@ -62,7 +62,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  rightDiceNumber = min + random.nextInt(max - min);
+                  rightDiceNumber = min + random.nextInt(max);
                   ;
                 });
               },
