@@ -52,7 +52,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  leftDiceNumber = min + random.nextInt(max);
+                  generateDiceRoll();
                 });
               },
               child: Image.asset('images/dice$leftDiceNumber.png'),
@@ -62,8 +62,7 @@ class _DicePageState extends State<DicePage> {
             child: TextButton(
               onPressed: () {
                 setState(() {
-                  rightDiceNumber = min + random.nextInt(max);
-                  ;
+                  generateDiceRoll();
                 });
               },
               child: Image.asset('images/dice$rightDiceNumber.png'),
@@ -72,5 +71,10 @@ class _DicePageState extends State<DicePage> {
         ],
       ),
     );
+  }
+
+  void generateDiceRoll() {
+    leftDiceNumber = min + random.nextInt(max);
+    rightDiceNumber = min + random.nextInt(max);
   }
 }
